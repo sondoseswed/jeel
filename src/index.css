@@ -2,95 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* JeelCode Design System - Digital City Learning Journey */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Colors - JeelCode Palette */
+    --jeel-black: 0 0% 0%;
+    --jeel-dark-blue: 214 53% 20%;
+    --jeel-pink: 330 96% 58%;
+    --jeel-cyan: 189 90% 50%;
+    --jeel-orange: 35 100% 64%;
+    --jeel-dark-gray: 0 0% 40%;
+    --jeel-light-gray: 0 0% 70%;
+    --jeel-white: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Semantic Tokens */
+    --background: var(--jeel-white);
+    --foreground: var(--jeel-black);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: var(--jeel-white);
+    --card-foreground: var(--jeel-black);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: var(--jeel-white);
+    --popover-foreground: var(--jeel-black);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--jeel-dark-blue);
+    --primary-foreground: var(--jeel-white);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: var(--jeel-light-gray);
+    --secondary-foreground: var(--jeel-black);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: var(--jeel-light-gray);
+    --muted-foreground: var(--jeel-dark-gray);
+
+    --accent: var(--jeel-pink);
+    --accent-foreground: var(--jeel-white);
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: var(--jeel-white);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: var(--jeel-light-gray);
+    --input: var(--jeel-light-gray);
+    --ring: var(--jeel-cyan);
 
-    --radius: 0.5rem;
+    /* JeelCode Specific Tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(var(--jeel-dark-blue)), hsl(var(--jeel-cyan)));
+    --stage-gradient: linear-gradient(135deg, hsl(var(--jeel-pink)), hsl(var(--jeel-orange)));
+    --city-glow: 0 0 30px hsl(var(--jeel-cyan) / 0.3);
+    --journey-path: linear-gradient(90deg, hsl(var(--jeel-cyan)), hsl(var(--jeel-pink)), hsl(var(--jeel-orange)));
+    --certificate-gradient: linear-gradient(135deg, hsl(var(--jeel-cyan)), hsl(var(--jeel-pink)));
+    --testimonial-glow: 0 8px 32px hsl(var(--jeel-pink) / 0.15);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: var(--jeel-black);
+    --foreground: var(--jeel-white);
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: var(--jeel-dark-blue);
+    --card-foreground: var(--jeel-white);
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: var(--jeel-black);
+    --popover-foreground: var(--jeel-white);
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--jeel-cyan);
+    --primary-foreground: var(--jeel-black);
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: var(--jeel-dark-gray);
+    --secondary-foreground: var(--jeel-white);
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: var(--jeel-dark-gray);
+    --muted-foreground: var(--jeel-light-gray);
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: var(--jeel-pink);
+    --accent-foreground: var(--jeel-white);
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: var(--jeel-white);
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: var(--jeel-dark-gray);
+    --input: var(--jeel-dark-gray);
+    --ring: var(--jeel-cyan);
+
+    --hero-gradient: linear-gradient(135deg, hsl(var(--jeel-black)), hsl(var(--jeel-dark-blue)));
+    --stage-gradient: linear-gradient(135deg, hsl(var(--jeel-pink)), hsl(var(--jeel-cyan)));
+    --certificate-gradient: linear-gradient(135deg, hsl(var(--jeel-cyan)), hsl(var(--jeel-pink)));
   }
 }
 
@@ -101,5 +107,56 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Cairo', 'Noto Sans Arabic', sans-serif;
+    direction: rtl;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .journey-stage {
+    @apply relative overflow-hidden rounded-2xl transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--jeel-white)), hsl(var(--jeel-light-gray) / 0.1));
+    box-shadow: 0 8px 32px hsl(var(--jeel-dark-blue) / 0.1);
+  }
+
+  .journey-stage:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 64px hsl(var(--jeel-dark-blue) / 0.15);
+  }
+
+  .city-glow {
+    box-shadow: var(--city-glow);
+  }
+
+  .hero-text-gradient {
+    background: var(--hero-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stage-number {
+    background: var(--stage-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .certificate-shine {
+    background: var(--certificate-gradient);
+    box-shadow: var(--testimonial-glow);
+  }
+
+  .testimonial-card {
+    @apply relative overflow-hidden rounded-2xl p-6 transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--jeel-white)), hsl(var(--jeel-cyan) / 0.05));
+    box-shadow: var(--testimonial-glow);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 48px hsl(var(--jeel-pink) / 0.2);
   }
 }
